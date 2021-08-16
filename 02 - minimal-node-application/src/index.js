@@ -13,46 +13,46 @@ const client = new ApolloClient({
   }
 });
 
-const GET_ORG_DETAILS = gql`
-  query {
-    organization(login: "qutbITech") {
-      name
-      url
-      description
-    }
-  }
-`;
+// const GET_ORG_DETAILS = gql`
+//   query {
+//     organization(login: "qutbITech") {
+//       name
+//       url
+//       description
+//     }
+//   }
+// `;
 
-client.query({
-  query: GET_ORG_DETAILS
-}).then(res => console.log('GET_ORG_DETAILS >>>', res));
-
-
-
-
-// Query with Variables
-
-const GET_ORG_DETAILS_VARIABLE = gql`
-  query getOrganization($org: String!){
-    organization(login: $org) {
-      name
-      url
-      description
-    }
-  }
-`;
-
-client.query({
-  query: GET_ORG_DETAILS_VARIABLE,
-  variables: {
-    name: "qutbITech"
-  }
-}).then(res => console.log('GET_ORG_DETAILS_VARIABLE >>>', res));
+// client.query({
+//   query: GET_ORG_DETAILS
+// }).then(res => console.log('GET_ORG_DETAILS >>>', res));
 
 
 
 
-// MUTATION
+// // Query with Variables
+
+// const GET_ORG_DETAILS_VARIABLE = gql`
+//   query getOrganization($org: String!){
+//     organization(login: $org) {
+//       name
+//       url
+//       description
+//     }
+//   }
+// `;
+
+// client.query({
+//   query: GET_ORG_DETAILS_VARIABLE,
+//   variables: {
+//     name: "qutbITech"
+//   }
+// }).then(res => console.log('GET_ORG_DETAILS_VARIABLE >>>', res));
+
+
+
+
+// // MUTATION
 
 const ADD_STAR = gql`
   mutation ($repoId: ID!) {
